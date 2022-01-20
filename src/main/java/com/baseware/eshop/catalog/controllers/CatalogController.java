@@ -52,9 +52,10 @@ public class CatalogController {
           content =@Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
               schema = @Schema(implementation = Problem.class)))
   })
-  @GetMapping("/products")
+  @GetMapping(value = "/products", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Page<ProductDto>> getProducts(Pageable pageable, ProductFilterDto productFilter) {
-      return ResponseEntity.ok(catalogService.getItems(pageable));
+    Page<ProductDto> productPage = catalogService.getItems(pageable);
+    return ResponseEntity.ok(productPage);
   }
 
   @Operation(summary = "Return a product by id",
@@ -188,7 +189,7 @@ public class CatalogController {
               content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                   schema = @Schema(implementation = Problem.class)))
   })
-  @PostMapping
+  @PostMapping("/brands")
   public ResponseEntity<Long> addBrand(@Valid @RequestBody ProductBrandDto productBrandDto) {
     return ResponseEntity.status(HttpStatus.CREATED)
         .body(catalogService.addBrand(productBrandDto));
@@ -235,7 +236,7 @@ public class CatalogController {
               content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                   schema = @Schema(implementation = Problem.class)))
       })
-  @PostMapping
+  @PostMapping("/types")
   public ResponseEntity<Long> addProductType(@Valid @RequestBody ProductTypeDto productTypeDto) {
     return ResponseEntity.status(HttpStatus.CREATED)
         .body(catalogService.addProductType(productTypeDto));

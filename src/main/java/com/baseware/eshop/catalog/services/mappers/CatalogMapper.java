@@ -6,7 +6,9 @@ import com.baseware.eshop.catalog.entity.ProductType;
 import com.baseware.eshop.catalog.services.dto.ProductBrandDto;
 import com.baseware.eshop.catalog.services.dto.ProductDto;
 import com.baseware.eshop.catalog.services.dto.ProductTypeDto;
+import org.mapstruct.MapMapping;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper
@@ -14,6 +16,8 @@ public interface CatalogMapper {
 
   CatalogMapper INSTANCE = Mappers.getMapper(CatalogMapper.class);
 
+  @Mapping(source = "productType.name", target = "typeName")
+  @Mapping(source = "productBrand.name", target = "brandName")
   ProductDto toProductDto(Product product);
 
   Product toProductEntity(ProductDto productDto);
