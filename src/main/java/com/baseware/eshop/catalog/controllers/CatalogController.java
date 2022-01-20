@@ -1,6 +1,5 @@
 package com.baseware.eshop.catalog.controllers;
 
-import com.baseware.eshop.catalog.entity.ProductBrand;
 import com.baseware.eshop.catalog.services.CatalogService;
 import com.baseware.eshop.catalog.services.dto.ProductBrandDto;
 import com.baseware.eshop.catalog.services.dto.ProductDto;
@@ -170,6 +169,25 @@ public class CatalogController {
     return ResponseEntity.ok(catalogService.getBrands());
   }
 
+  @Operation(summary = "add a new Brand",
+      responses = {
+          @ApiResponse(responseCode = "201",
+              description = "add a brand",
+              content =@Content(mediaType = MediaType.TEXT_PLAIN_VALUE,
+                  schema = @Schema(implementation = Long.class))),
+          @ApiResponse(responseCode = "400",
+              description = "Invalid product data",
+              content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                  schema = @Schema(implementation = Problem.class))),
+          @ApiResponse(responseCode = "403",
+              description = "Not authorized",
+              content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                  schema = @Schema(implementation = Problem.class))),
+          @ApiResponse(responseCode = "500",
+              description = "System failed",
+              content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                  schema = @Schema(implementation = Problem.class)))
+  })
   @PostMapping
   public ResponseEntity<Long> addBrand(@Valid @RequestBody ProductBrandDto productBrandDto) {
     return ResponseEntity.status(HttpStatus.CREATED)
@@ -198,6 +216,25 @@ public class CatalogController {
   }
 
 
+  @Operation(summary = "add a new product type",
+      responses = {
+          @ApiResponse(responseCode = "201",
+              description = "add a product type",
+              content =@Content(mediaType = MediaType.TEXT_PLAIN_VALUE,
+                  schema = @Schema(implementation = Long.class))),
+          @ApiResponse(responseCode = "400",
+              description = "Invalid product data",
+              content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                  schema = @Schema(implementation = Problem.class))),
+          @ApiResponse(responseCode = "403",
+              description = "Not authorized",
+              content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                  schema = @Schema(implementation = Problem.class))),
+          @ApiResponse(responseCode = "500",
+              description = "System failed",
+              content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                  schema = @Schema(implementation = Problem.class)))
+      })
   @PostMapping
   public ResponseEntity<Long> addProductType(@Valid @RequestBody ProductTypeDto productTypeDto) {
     return ResponseEntity.status(HttpStatus.CREATED)

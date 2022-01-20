@@ -1,6 +1,5 @@
 package com.baseware.eshop.catalog.services;
 
-import com.baseware.eshop.catalog.entity.ProductType;
 import com.baseware.eshop.catalog.services.dto.ProductBrandDto;
 import com.baseware.eshop.catalog.services.dto.ProductDto;
 import com.baseware.eshop.catalog.services.dto.ProductTypeDto;
