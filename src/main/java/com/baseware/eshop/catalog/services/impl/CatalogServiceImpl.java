@@ -1,7 +1,7 @@
 package com.baseware.eshop.catalog.services.impl;
 
 import com.baseware.eshop.catalog.entity.Product;
-import com.baseware.eshop.catalog.exceptions.ResourceNotFound;
+import com.baseware.eshop.catalog.core.data.exceptions.ResourceNotFound;
 import com.baseware.eshop.catalog.repositories.ProductBrandRepository;
 import com.baseware.eshop.catalog.repositories.ProductRepository;
 import com.baseware.eshop.catalog.repositories.ProductTypeRepository;

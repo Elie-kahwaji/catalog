@@ -1,7 +1,7 @@
 package com.baseware.eshop.catalog.controllers;
 
 import com.baseware.eshop.catalog.controllers.errors.GlobalExceptionHandler;
-import com.baseware.eshop.catalog.exceptions.ResourceNotFound;
+import com.baseware.eshop.catalog.core.data.exceptions.ResourceNotFound;
 import com.baseware.eshop.catalog.services.CatalogService;
 import com.baseware.eshop.catalog.services.dto.ProductDto;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -86,7 +86,7 @@ public class CatalogControllerTest {
         .andExpect(status().isOk())
         .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
         .andExpect(jsonPath("$.content", hasSize(20)))
-        .andExpect(jsonPath("$.content[0].name").value("Rosemary - Dry"));
+        .andExpect(jsonPath("$.content[0].name").value(mockProductList.get(0).getName()));
   }
 
   @Test
