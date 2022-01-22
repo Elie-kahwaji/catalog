@@ -8,7 +8,7 @@ public class ProductFilterDto {
 
   private List<Long> brands;
 
-  private List<String> types;
+  private List<Long> types;
 
   private String brandName;
 

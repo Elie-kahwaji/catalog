@@ -1,4 +1,13 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health", "info", "prometheus"]
+
 spring:
+  application:
+    name: catalog
+    instance_id: catalog_1
   datasource:
     url: jdbc:mysql://localhost:3306/catalog
     username: root

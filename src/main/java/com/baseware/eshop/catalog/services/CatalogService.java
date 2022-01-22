@@ -1,11 +1,13 @@
 package com.baseware.eshop.catalog.services;
 
+import com.baseware.eshop.catalog.services.dto.ProductBrandDto;
 import com.baseware.eshop.catalog.services.dto.ProductDto;
-import java.util.Optional;
+import com.baseware.eshop.catalog.services.dto.ProductTypeDto;
+import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-public interface ProductService {
+public interface CatalogService {
 
   /**
    * Return a paged catalog items.
@@ -28,7 +30,7 @@ public interface ProductService {
    * @param productDto the new product.
    * @return the unique id of the product.
    */
-  Long createProduct(ProductDto productDto);
+  Long addProduct(ProductDto productDto);
 
   /**
    * Update a product
@@ -42,4 +44,32 @@ public interface ProductService {
    * @param id the id of the product.
    */
   void deleteProduct(Long id);
+
+  /**
+   * Return a list of brands.
+   *
+   * @return list of brands.
+   */
+  List<ProductBrandDto> getBrands();
+
+  /**
+   * Add a brand.
+   * @param productBrandDto the new brand.
+   * @return the unique id of the brand.
+   */
+  Long addBrand(ProductBrandDto productBrandDto);
+
+  /**
+   * Return list of product types.
+   *
+   * @return list of product types.
+   */
+  List<ProductTypeDto> getTypes();
+
+  /**
+   * Add a product type.
+   * @param productTypeDto the new product type.
+   * @return the unique id of the product type.
+   */
+  Long addProductType(ProductTypeDto productTypeDto);
 }

@@ -12,20 +12,10 @@ public class ProductDto {
   private String pictureFileName;
   private String pictureFileUri;
   private long productTypeId;
-  private ProductTypeDto productType;
+  private String typeName;
   private long productBrandId;
-  private ProductBrandDto productBrand;
+  private String brandName;
   private int availableStock;
   private int restockThreshold;
   private int maxStockThreshold;
-
-  @JsonIgnore
-  public long getProductTypeId() {
-    return productTypeId;
-  }
-
-  @JsonIgnore
-  public long getProductBrandId() {
-    return productBrandId;
-  }
 }

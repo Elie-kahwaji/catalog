@@ -1,4 +1,4 @@
-package com.baseware.eshop.catalog.exceptions;
+package com.baseware.eshop.catalog.core.data.exceptions;
 
 /**
  * Indicate a Resource is not found.
