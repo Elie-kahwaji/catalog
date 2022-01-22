@@ -1,8 +1,8 @@
-package com.baseware.eshop.catalog.services;
+package com.baseware.eshop.catalog.service;
 
-import com.baseware.eshop.catalog.services.dto.ProductBrandDto;
-import com.baseware.eshop.catalog.services.dto.ProductDto;
-import com.baseware.eshop.catalog.services.dto.ProductTypeDto;
+import com.baseware.eshop.catalog.service.dto.ProductBrandDto;
+import com.baseware.eshop.catalog.service.dto.ProductDto;
+import com.baseware.eshop.catalog.service.dto.ProductTypeDto;
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

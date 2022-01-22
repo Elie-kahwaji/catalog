@@ -1,4 +1,4 @@
-package com.baseware.eshop.catalog.repositories;
+package com.baseware.eshop.catalog.repository;
 
 import com.baseware.eshop.catalog.entity.ProductType;
 import org.springframework.data.jpa.repository.JpaRepository;

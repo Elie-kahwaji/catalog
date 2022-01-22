@@ -1,12 +1,11 @@
-package com.baseware.eshop.catalog.services.mappers;
+package com.baseware.eshop.catalog.service.mappers;
 
 import com.baseware.eshop.catalog.entity.Product;
 import com.baseware.eshop.catalog.entity.ProductBrand;
 import com.baseware.eshop.catalog.entity.ProductType;
-import com.baseware.eshop.catalog.services.dto.ProductBrandDto;
-import com.baseware.eshop.catalog.services.dto.ProductDto;
-import com.baseware.eshop.catalog.services.dto.ProductTypeDto;
-import org.mapstruct.MapMapping;
+import com.baseware.eshop.catalog.service.dto.ProductBrandDto;
+import com.baseware.eshop.catalog.service.dto.ProductDto;
+import com.baseware.eshop.catalog.service.dto.ProductTypeDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;

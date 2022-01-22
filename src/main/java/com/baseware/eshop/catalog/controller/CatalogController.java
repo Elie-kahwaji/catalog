@@ -1,10 +1,10 @@
-package com.baseware.eshop.catalog.controllers;
+package com.baseware.eshop.catalog.controller;
 
-import com.baseware.eshop.catalog.services.CatalogService;
-import com.baseware.eshop.catalog.services.dto.ProductBrandDto;
-import com.baseware.eshop.catalog.services.dto.ProductDto;
-import com.baseware.eshop.catalog.services.dto.ProductFilterDto;
-import com.baseware.eshop.catalog.services.dto.ProductTypeDto;
+import com.baseware.eshop.catalog.service.CatalogService;
+import com.baseware.eshop.catalog.service.dto.ProductBrandDto;
+import com.baseware.eshop.catalog.service.dto.ProductDto;
+import com.baseware.eshop.catalog.service.dto.ProductFilterDto;
+import com.baseware.eshop.catalog.service.dto.ProductTypeDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;

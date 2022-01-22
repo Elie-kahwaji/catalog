@@ -1,4 +1,4 @@
-package com.baseware.eshop.catalog.controllers.errors;
+package com.baseware.eshop.catalog.controller.errors;
 
 import com.baseware.eshop.catalog.core.data.exceptions.ResourceNotFound;
 import org.springframework.http.HttpStatus;
