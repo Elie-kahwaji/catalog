@@ -1,15 +1,15 @@
-package com.baseware.eshop.catalog.services.impl;
+package com.baseware.eshop.catalog.service.impl;
 
 import com.baseware.eshop.catalog.entity.Product;
 import com.baseware.eshop.catalog.core.data.exceptions.ResourceNotFound;
-import com.baseware.eshop.catalog.repositories.ProductBrandRepository;
-import com.baseware.eshop.catalog.repositories.ProductRepository;
-import com.baseware.eshop.catalog.repositories.ProductTypeRepository;
-import com.baseware.eshop.catalog.services.CatalogService;
-import com.baseware.eshop.catalog.services.dto.ProductBrandDto;
-import com.baseware.eshop.catalog.services.dto.ProductDto;
-import com.baseware.eshop.catalog.services.dto.ProductTypeDto;
-import com.baseware.eshop.catalog.services.mappers.CatalogMapper;
+import com.baseware.eshop.catalog.repository.ProductBrandRepository;
+import com.baseware.eshop.catalog.repository.ProductRepository;
+import com.baseware.eshop.catalog.repository.ProductTypeRepository;
+import com.baseware.eshop.catalog.service.CatalogService;
+import com.baseware.eshop.catalog.service.dto.ProductDto;
+import com.baseware.eshop.catalog.service.dto.ProductBrandDto;
+import com.baseware.eshop.catalog.service.dto.ProductTypeDto;
+import com.baseware.eshop.catalog.service.mappers.CatalogMapper;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

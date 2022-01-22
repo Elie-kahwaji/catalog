@@ -1,9 +1,9 @@
-package com.baseware.eshop.catalog.controllers;
+package com.baseware.eshop.catalog.controller;
 
-import com.baseware.eshop.catalog.controllers.errors.GlobalExceptionHandler;
+import com.baseware.eshop.catalog.controller.errors.GlobalExceptionHandler;
 import com.baseware.eshop.catalog.core.data.exceptions.ResourceNotFound;
-import com.baseware.eshop.catalog.services.CatalogService;
-import com.baseware.eshop.catalog.services.dto.ProductDto;
+import com.baseware.eshop.catalog.service.CatalogService;
+import com.baseware.eshop.catalog.service.dto.ProductDto;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;

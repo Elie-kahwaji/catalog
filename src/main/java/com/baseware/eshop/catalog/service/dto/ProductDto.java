@@ -1,4 +1,4 @@
-package com.baseware.eshop.catalog.services.dto;
+package com.baseware.eshop.catalog.service.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;

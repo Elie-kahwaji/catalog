@@ -1,4 +1,4 @@
-package com.baseware.eshop.catalog.services.dto;
+package com.baseware.eshop.catalog.service.dto;
 
 import java.util.List;
 import lombok.Data;
