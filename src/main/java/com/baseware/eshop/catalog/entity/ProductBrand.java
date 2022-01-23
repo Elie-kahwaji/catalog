@@ -1,5 +1,6 @@
 package com.baseware.eshop.catalog.entity;
 
+import com.baseware.eshop.catalog.core.data.entity.audit.Auditable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "product_brand")
-public class ProductBrand {
+public class ProductBrand extends Auditable<String> {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -25,32 +25,13 @@ public class LoggingConfig {
   private final Environment env;
 
   /**
-   * Pointcut for execution of methods on classes annotated with {@link RestController}
-   * annotation
+   * Pointcut that matches all repositories, services and Web REST endpoints.
    */
-  @Pointcut("within(@org.springframework.web.bind.annotation.RestController *)")
-  public void restControllerAnnotation() {
-  }
-
-  /**
-   * Pointcut for execution of methods on classes annotated with {@link Service}
-   * annotation
-   */
-  @Pointcut("within(@org.springframework.stereotype.Service *)")
-  public void serviceAnnotation() {
-  }
-
-  /**
-   * Pointcut for execution of methods on classes annotated with
-   * {@link Repository} annotation
-   */
-  @Pointcut("within(@org.springframework.stereotype.Repository *)")
-  public void repositoryAnnotation() {
-  }
-
-  @Pointcut("restControllerAnnotation() || serviceAnnotation() || repositoryAnnotation()")
-  public void loggingPointcut() {
-
+  @Pointcut("within(@org.springframework.stereotype.Repository *)" +
+      " || within(@org.springframework.stereotype.Service *)" +
+      " || within(@org.springframework.web.bind.annotation.RestController *)")
+  public void springBeanPointcut() {
+    // Method is empty as this is just a Pointcut, the implementations are in the advices.
   }
 
   /**
@@ -59,7 +40,7 @@ public class LoggingConfig {
    * @param joinPoint join point for advice
    * @param e exception
    */
-  @AfterThrowing(pointcut = "loggingPointcut()", throwing = "e")
+  @AfterThrowing(pointcut = "springBeanPointcut()", throwing = "e")
   public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {
     log.error("Exception in {}.{}() with cause = {}", joinPoint.getSignature().getDeclaringTypeName(),
               joinPoint.getSignature().getName(), e.getCause() != null? e.getCause() : "NULL");
@@ -72,7 +53,7 @@ public class LoggingConfig {
    * @return result
    * @throws Throwable throws IllegalArgumentException
    */
-  @Around("loggingPointcut()")
+  @Around("springBeanPointcut()")
   public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
     if (log.isDebugEnabled()) {
       log.debug("Enter: {}.{}() with argument[s] = {}", joinPoint.getSignature().getDeclaringTypeName(),
