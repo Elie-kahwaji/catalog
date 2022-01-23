@@ -7,9 +7,11 @@ services:
       - "3306:3306"
     volumes:
       - ./data/mysql:/var/lib/mysql
+      - "./deployment/mysql/main.sql:/docker-entrypoint-initdb.d/1.sql"
+      - "./deployment/mysql/zipkin/init.sql:/docker-entrypoint-initdb.d/2.sql"
+      - "./deployment/mysql/catalog/init.sql:/docker-entrypoint-initdb.d/3.sql"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: catalog
   prometheus:
     container_name: prometheus
     image: prom/prometheus
@@ -30,3 +32,17 @@ services:
       - ./configuration/grafana/grafana.env
     depends_on:
       - prometheus
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin
+    environment:
+      - STORAGE_TYPE=mem
+      # Point the zipkin at the storage backend
+#      - MYSQL_HOST=mysql-db
+#      - MYSQL_DB=zipkin
+#      - MYSQL_USER=zipkin
+#      - MYSQL_PASS=zipkin
+    ports:
+      - "9411:9411"
+    depends_on:
+      - mysql-db
