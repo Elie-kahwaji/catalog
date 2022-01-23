@@ -1,0 +1,5 @@
+CREATE USER IF NOT EXISTS 'zipkin'@'%' IDENTIFIED BY 'zipkin';
+
+CREATE DATABASE IF NOT EXISTS zipkin CHARACTER SET utf8;
+
+GRANT ALL ON zipkin.* TO 'zipkin'@'%';
